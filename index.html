@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      CryptoVault - Secure Recovery Phrase Printer | Print Your Crypto Wallet
+      Backup
+    </title>
+
+    <meta
+      name="description"
+      content="Secure, offline recovery phrase printer for cryptocurrency wallets. Generate professional printouts of your 12-24 word recovery phrases with enhanced security features."
+    />
+    <meta
+      name="keywords"
+      content="crypto wallet, recovery phrase, seed phrase, backup, cryptocurrency, bitcoin, ethereum, wallet security, mnemonic, BIP39"
+    />
+    <meta name="author" content="LucaNL" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cryptovault.lucanl.dev/" />
+    <meta
+      property="og:title"
+      content="CryptoVault - Secure Recovery Phrase Printer"
+    />
+    <meta
+      property="og:description"
+      content="Secure, offline recovery phrase printer for cryptocurrency wallets. Generate professional printouts of your 12-24 word recovery phrases."
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://cryptovault.lucanl.dev/" />
+    <meta
+      property="twitter:title"
+      content="CryptoVault - Secure Recovery Phrase Printer"
+    />
+    <meta
+      property="twitter:description"
+      content="Secure, offline recovery phrase printer for cryptocurrency wallets."
+    />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23000'/><circle cx='16' cy='16' r='12' fill='none' stroke='%2300d4ff' stroke-width='2'/><path d='M12 14 L16 18 L20 12' stroke='%2300d4ff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='16' cy='16' r='1.5' fill='%2300d4ff'/></svg>"
+    />
+    <meta name="theme-color" content="#0c0c0c" />
+
+    <link rel="canonical" href="https://cryptovault.lucanl.dev/" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <i class="fas fa-shield-alt"></i>
+          <h1>CryptoVault</h1>
+        </div>
+        <p class="subtitle">Secure Recovery Phrase Printer</p>
+      </header>
+
+      <main class="main-content">
+        <div class="input-section">
+          <div class="section-header">
+            <i class="fas fa-key"></i>
+            <h2>Enter Your Recovery Phrase</h2>
+          </div>
+          <p class="description">
+            Enter your 12, 15, 18, 21, or 24-word recovery phrase. Each word
+            should be separated by a space.
+          </p>
+
+          <div class="input-container">
+            <textarea
+              id="recoveryPhrase"
+              placeholder="Enter your recovery phrase here... (e.g., abandon ability able about above absent absorb abstract absurd abuse access accident)"
+              rows="4"
+            ></textarea>
+            <div class="word-counter"><span id="wordCount">0</span> words</div>
+          </div>
+
+          <div class="validation-info" id="validationInfo">
+            <i class="fas fa-info-circle"></i>
+            <span>Please enter your recovery phrase</span>
+          </div>
+
+          <div class="button-group">
+            <button id="validateBtn" class="btn btn-secondary">
+              <i class="fas fa-check-circle"></i>
+              Validate Phrase
+            </button>
+            <button id="clearBtn" class="btn btn-outline">
+              <i class="fas fa-trash"></i>
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <div class="preview-section" id="previewSection" style="display: none">
+          <div class="section-header">
+            <i class="fas fa-eye"></i>
+            <h2>Print Preview</h2>
+          </div>
+
+          <div class="preview-container" id="previewContainer"></div>
+
+          <div class="button-group">
+            <button id="printBtn" class="btn btn-primary">
+              <i class="fas fa-print"></i>
+              Print Recovery Phrase
+            </button>
+            <button id="downloadBtn" class="btn btn-secondary">
+              <i class="fas fa-download"></i>
+              Download PDF
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <div class="security-notice">
+        <div class="notice-header">
+          <i class="fas fa-exclamation-triangle"></i>
+          <h3>Security Notice</h3>
+        </div>
+        <ul>
+          <li><strong>Never share</strong> your recovery phrase with anyone</li>
+          <li><strong>Store securely</strong> in multiple safe locations</li>
+          <li>
+            <strong>Keep offline</strong> - avoid digital storage when possible
+          </li>
+          <li><strong>Verify accuracy</strong> before printing</li>
+          <li>
+            <strong>Use a secure printer</strong> not connected to the internet
+          </li>
+        </ul>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2025 CryptoVault. Your security is our priority.</p>
+        <p class="disclaimer">
+          This tool processes your recovery phrase locally in your browser. No
+          data is sent to external servers.
+        </p>
+        <div class="author-info">
+          <p>
+            Created by
+            <a
+              href="https://lucanl.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><strong>LucaNL</strong></a
+            >
+            |
+            <a
+              href="https://github.com/LucaNL/CryptoVault"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-github"></i> View on GitHub</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <div id="printTemplate" class="print-only">
+      <div class="print-header">
+        <h1><i class="fas fa-shield-alt"></i> CryptoVault Recovery Phrase</h1>
+        <p class="print-date">Generated on: <span id="printDate"></span></p>
+      </div>
+
+      <div class="print-content">
+        <div class="phrase-grid" id="printPhraseGrid"></div>
+
+        <div class="print-instructions">
+          <h3>Recovery Instructions:</h3>
+          <ol>
+            <li>Keep this document in a secure, fireproof location</li>
+            <li>Make multiple copies and store them separately</li>
+            <li>Never store digitally or take photos</li>
+            <li>Words must be entered in the exact order shown</li>
+            <li>Verify each word carefully when recovering your wallet</li>
+          </ol>
+        </div>
+
+        <div class="print-warning">
+          <strong>⚠️ WARNING:</strong> Anyone with access to this recovery
+          phrase can access your cryptocurrency. Keep it absolutely secure and
+          private.
+        </div>
+      </div>
+    </div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "CryptoVault - Recovery Phrase Printer",
+        "description": "Secure, offline recovery phrase printer for cryptocurrency wallets. Generate professional printouts of your 12-24 word recovery phrases with enhanced security features.",
+        "url": "https://cryptovault.lucanl.dev/",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Any",
+        "author": {
+          "@type": "Person",
+          "name": "LucaNL",
+          "url": "https://lucanl.dev/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "ratingCount": "1"
+        },
+        "featureList": [
+          "12-24 word recovery phrase support",
+          "Offline processing",
+          "Professional print layout",
+          "PDF export",
+          "Security warnings",
+          "BIP39 validation"
+        ]
+      }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
